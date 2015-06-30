@@ -7,3 +7,6 @@
      <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr> 
   <% } %>
 </table>
+<% if(!quizes.length) {%>
+	<p>No se han encontrado preguntas </p>
+<% } %>
