@@ -13,13 +13,15 @@ exports.load = function(req, res, next, quizId) {
 };
 
 // GET /quizes
-exports.index = function(req, res) {
-  models.Quiz.findAll().then(
+//GET /quizes?search
+exports.search = function(req, res) {
+  var searchQuery = req.query.search || '';
+  var search = ("%" + searchQuery + "%").replace(/\s/gi, "%");
+  models.Quiz.findAll({where: ["pregunta like ?", search]}).then(
     function(quizes) {
-      res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+      res.render('quizes/index', { quizes: quizes, search: searchQuery, errors: []});
     }
-  ).catch(function(error){next(error)});
-};
+  ).catch(function(error) { next(error);});
 
 // GET /quizes/:id
 exports.show = function(req, res) {
