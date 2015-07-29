@@ -9,6 +9,6 @@ header, nav, section { background: #eee; text-align: center;}
 footer               { background: #eee; text-align: center;}
 nav span             { margin: 0px 10px 0px 0px;}
 table				 { margin: 0 auto; padding: 10px;}
-button				 { border: none; padding: 5px;}
+button				 { border: none; padding: 2px;}
 #ErrorMsgs           { color: #f61; font-size: smaler}
 .autor				 {height: 140px;}
